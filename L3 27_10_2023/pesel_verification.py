@@ -2,22 +2,22 @@ PESEL_LENGTH = 11
 PESEL_WEIGHT = (1, 3, 7, 9, 1, 3, 7, 9, 1, 3)
 
 
-def is_length_valid(number: str) -> bool:
+def is_length_valid(number):
     """verifies length of PESEL number"""
     return len(number) == 11
 
 
-def is_pesel_numerical(number: str) -> bool:
+def is_pesel_numerical(number):
     """verifies if PESEL contains only numbers"""
     return number.isdigit()
 
 
-def is_date_valid(date: str) -> bool:
+def is_date_valid(date):
     """verifies if date exists"""
     return is_month_valid(date[2:4]) and is_day_valid(date)
 
 
-def is_month_valid(month: str) -> bool:
+def is_month_valid(month):
     """verifies if month exists"""
 
     # first digit is even (Jan-Sep) and second digit is 0
@@ -31,7 +31,7 @@ def is_month_valid(month: str) -> bool:
     return True
 
 
-def is_day_valid(date: str) -> bool:
+def is_day_valid(date):
     """verifies if day exists adequately to month"""
     month = (int(date[2]) % 2)*10 + int(date[3])
     day = int(date[4:6])
@@ -51,7 +51,7 @@ def is_day_valid(date: str) -> bool:
     return False
 
 
-def is_checksum_valid(number: str) -> bool:
+def is_checksum_valid(number):
     """verify if checksum is correct"""
     checksum = 0
 
@@ -62,7 +62,7 @@ def is_checksum_valid(number: str) -> bool:
     return checksum == int(number[10])
 
 
-def increment_sex_counters(male: int, female: int, sex_digit: int) -> tuple:
+def increment_sex_counters(male, female, sex_digit):
     """increments adequate counter in relation to sex"""
     if sex_digit % 2:
         male += 1
