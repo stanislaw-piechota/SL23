@@ -1,5 +1,8 @@
+from time import time
+
 PESEL_LENGTH = 11
 PESEL_WEIGHT = (1, 3, 7, 9, 1, 3, 7, 9, 1, 3)
+CENTURY_SHIFT = {8: -100, 0: 0, 2: 100, 4: 200, 6: 300}
 
 
 def is_length_valid(number):
@@ -7,21 +10,26 @@ def is_length_valid(number):
     return len(number) == 11
 
 
-def is_pesel_numerical(number):
+def is_pesel_numerical(number: str):
     """verifies if PESEL contains only numbers"""
     return number.isdigit()
 
 
 def is_date_valid(date):
     """verifies if date exists"""
-    return is_month_valid(date[2:4]) and is_day_valid(date)
+    if not is_month_valid(date[2:4]):
+        return False
+    if not is_day_valid(date):
+        return False
+
+    return True
 
 
 def is_month_valid(month):
     """verifies if month exists"""
 
     # first digit is even (Jan-Sep) and second digit is 0
-    if int(month[0]) % 2 == 0 and not int(month[0]):
+    if int(month[0]) % 2 == 0 and int(month[1]) != 0:
         return False
 
     # first digit is odd (Oct-Dec) and second digit is greater than 2
@@ -29,6 +37,11 @@ def is_month_valid(month):
         return False
 
     return True
+
+
+def calculate_year(year, shift):
+    """calculates year of birth"""
+    return 1900 + CENTURY_SHIFT[int(shift)//2*2] + int(year)
 
 
 def is_day_valid(date):
@@ -45,8 +58,12 @@ def is_day_valid(date):
         return True
 
     # February
-    if month == 2 and 1 <= day <= 28:
-        return True
+    if month == 2:
+        if 1 <= day <= 28:
+            return True
+        if (((year := calculate_year(date[:2], date[2])) % 4 == 0
+                and year % 100 != 0) or year % 400 == 0) and day == 29:
+            return True
 
     return False
 
@@ -62,16 +79,8 @@ def is_checksum_valid(number):
     return checksum == int(number[10])
 
 
-def increment_sex_counters(male, female, sex_digit):
-    """increments adequate counter in relation to sex"""
-    if sex_digit % 2:
-        male += 1
-    else:
-        female += 1
-    return male, female
-
-
 # counters
+start_time = time()
 total = correct = male = female = 0
 invalid_length = invalid_digit = invalid_date = invalid_checksum = 0
 
@@ -87,8 +96,10 @@ for pesel in file:
             if is_date_valid(pesel[:6]):
                 if is_checksum_valid(pesel):
                     correct += 1
-                    male, female = increment_sex_counters(male, female,
-                                                          int(pesel[9]))
+                    if int(pesel[9]) % 2 == 0:
+                        female += 1
+                    else:
+                        male += 1
                 else:
                     invalid_checksum += 1
             else:
@@ -103,3 +114,4 @@ file.close()
 # show results
 print(total, correct, female, male)
 print(invalid_length, invalid_digit, invalid_date, invalid_checksum)
+print(f"Execution time: {(time()-start_time)}s")

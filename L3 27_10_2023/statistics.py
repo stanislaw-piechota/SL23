@@ -23,10 +23,10 @@ print()
 
 
 """PART 2"""
-for char in ',.? "-\'!;:\n\t':
-    text = text.replace(char, ' ')
-words = text.split()
+words = []
 words_number = {}
+for word in text.split():
+    words.append(word.strip())
 
 for word in words:
     if words_number.get(word):
