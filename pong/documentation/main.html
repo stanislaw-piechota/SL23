@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module main</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title">main</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Csp%5Cdesktop%5Csl23%5Cpong%5Cmain.py">c:\users\sp\desktop\sl23\pong\main.py</a></td></tr></table>
+    <p><span class="code">Main&nbsp;file&nbsp;of&nbsp;the&nbsp;game<br>
+consolidating&nbsp;function&nbsp;and&nbsp;constants<br>
+from&nbsp;all&nbsp;other&nbsp;modules</span></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="objects.html">objects</a><br>
+</td><td class="multicolumn"><a href="pygame.html">pygame</a><br>
+</td><td class="multicolumn"></td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+    
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-display_end_message"><strong>display_end_message</strong></a>(points_diff: int, screen: pygame.surface.Surface)</dt><dd><span class="code">Function&nbsp;that&nbsp;display&nbsp;message&nbsp;which&nbsp;player&nbsp;won&nbsp;the&nbsp;game<br>
+and&nbsp;renders&nbsp;adequate&nbsp;text&nbsp;to&nbsp;do&nbsp;so<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;points_diff&nbsp;(int):&nbsp;Difference&nbsp;between&nbsp;players&nbsp;scores.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x&nbsp;&gt;&nbsp;0&nbsp;=&gt;&nbsp;1st&nbsp;player&nbsp;won<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x&nbsp;&lt;&nbsp;0&nbsp;=&gt;&nbsp;2nd&nbsp;player&nbsp;won<br>
+&nbsp;&nbsp;&nbsp;&nbsp;screen&nbsp;(pygame.surface.Surface):&nbsp;display&nbsp;area<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None</span></dd></dl>
+ <dl><dt><a name="-run_game"><strong>run_game</strong></a>(screen: pygame.surface.Surface) -&gt; int</dt><dd><span class="code">Function&nbsp;responsible&nbsp;for&nbsp;initializing&nbsp;neccessary<br>
+data,&nbsp;structures&nbsp;and&nbsp;main&nbsp;loop&nbsp;of&nbsp;the&nbsp;game.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;screen&nbsp;(pygame.surface.Surface):&nbsp;display&nbsp;area<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(int):&nbsp;difference&nbsp;between&nbsp;players&nbsp;points</span></dd></dl>
+</td></tr></table><p>
+<table class="section">
+<tr class="decor data-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Data</strong></td></tr>
+    
+<tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><strong>BACKGROUND_COLOR</strong> = (0, 0, 0)<br>
+<strong>BALL_RADIUS</strong> = 10<br>
+<strong>BALL_SPEED</strong> = 12<br>
+<strong>FONT</strong> = &lt;pygame.font.Font object&gt;<br>
+<strong>OBJECTS_COLOR</strong> = (255, 255, 255)<br>
+<strong>PAD_1_KEYS</strong> = [119, 115]<br>
+<strong>PAD_2_KEYS</strong> = [1073741906, 1073741905]<br>
+<strong>PAD_SIZE</strong> = (20, 200)<br>
+<strong>PAD_SPEED</strong> = 4<br>
+<strong>SCREEN_SIZE</strong> = (1200, 700)<br>
+<strong>STARTING_TICK</strong> = 2000<br>
+<strong>TEXT_COLOR</strong> = (125, 125, 125)</td></tr></table>
+</body></html>

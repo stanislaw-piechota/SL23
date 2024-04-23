@@ -1,0 +1,1290 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>screens API documentation</title>
+<meta name="description" content="Module containg screen objects" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>screens</code></h1>
+</header>
+<section id="section-intro">
+<p>Module containg screen objects</p>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">&#34;&#34;&#34;Module containg screen objects&#34;&#34;&#34;
+
+import sys
+from time import sleep
+from threading import Thread
+import pygame
+from modules.constants import *
+from modules.classes import *
+from modules.sprites import Player, Enemy, Point
+from modules.functions import *
+
+
+class Screen():
+    &#34;&#34;&#34;
+    Basic class of Screen
+    Implementing the concept of Abstract class
+    &#34;&#34;&#34;
+    def __init__(self, signals):
+        self.screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+        self.signals = signals
+        self.clock = pygame.time.Clock()
+
+    def definite_exit(self):
+        &#34;&#34;&#34;Turning off all the signals&#34;&#34;&#34;
+        self.signals.running = False
+        self.signals.endgame = True
+        pygame.quit()
+        sys.exit(0)
+
+
+class EndScreen(Screen):
+    &#34;&#34;&#34;Class with information about win/draw/end&#34;&#34;&#34;
+    def __init__(self, signals):
+        Screen.__init__(self, signals)
+        self.points = []
+        self.end_texts = []
+        self.running = True
+
+    def get_result(self):
+        &#34;&#34;&#34;Determine win/draw or end of round in case of 1 player&#34;&#34;&#34;
+        if len(self.points) == 1:
+            return &#34;end&#34;
+        if self.points.count(max(self.points)) &gt;= 2:
+            return &#34;draw&#34;
+        return &#34;win&#34;
+
+    def update_text(self):
+        &#34;&#34;&#34;Create apropriate messages in case of result&#34;&#34;&#34;
+        self.end_texts = []
+        match self.get_result():
+            case &#34;end&#34;:
+                self.end_texts.append(&#34;TIME PASSED&#34;)
+            case &#34;draw&#34;:
+                line = &#34;DRAW - &#34;
+                for i, points in enumerate(self.points):
+                    if points == max(self.points):
+                        line += f&#34;Player {i+1} &#34;
+                self.end_texts.append(line)
+            case &#34;win&#34;:
+                player_ind = self.points.index(max(self.points))+1
+                self.end_texts.append(f&#34;WIN - Player {player_ind}&#34;)
+        self.end_texts.append(&#34;Hit ENTER to play again&#34;)
+
+    def render_text(self):
+        self.update_text()
+        self.texts = []
+        self.text_rects = []
+        for i, text in enumerate(self.end_texts):
+            self.texts.append(FONT.render(text, True, TEXT_COLOR))
+            self.text_rects.append(
+                self.texts[i].get_rect(centerx=(SCREEN_WIDTH-SCORE_PANEL_WIDTH)//2,
+                                       centery=SCREEN_HEIGHT//(len(self.end_texts)+1)*(i+1))
+            )
+
+    def check_events(self):
+        &#34;&#34;&#34;Handling events&#34;&#34;&#34;
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                self.definite_exit()
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_RETURN:
+                    self.signals.stage = &#34;intro&#34;
+                    self.running = False
+
+    def fill_screen(self):
+        &#34;&#34;&#34;Drawing objects on the screen&#34;&#34;&#34;
+        self.screen.fill(BACKGROUND_COLOR)
+        self.scores.draw_scoreboard()
+        for i, text in enumerate(self.texts):
+            self.screen.blit(text, self.text_rects[i])
+        pygame.display.flip()
+
+    def run(self):
+        &#34;&#34;&#34;
+        Neccessary function to run main.py loop
+        Main loop of the screen, setting order of actions
+        &#34;&#34;&#34;
+        self.running = True
+        self.render_text()
+        while self.signals.running and self.running:
+            self.check_events()
+            self.fill_screen()
+
+
+class IntroScreen(Screen):
+    &#34;&#34;&#34;Welcome screen of the game&#34;&#34;&#34;
+    def __init__(self, signals):
+        Screen.__init__(self, signals)
+        self.number_of_players = 0
+        # rendering static texts
+        self.intro_text = TITLE_FONT.render(&#34;PACMAN multiplayer&#34;, True, TEXT_COLOR)
+        self.intro_text_rect = self.intro_text.get_rect(centerx=SCREEN_WIDTH//2, top=SCREEN_HEIGHT*.05)
+        self.get_ready_text = FONT.render(&#34;Click button that is shown below to confirm&#34;, True, TEXT_COLOR)
+        self.get_ready_rect = self.get_ready_text.get_rect(centerx=SCREEN_WIDTH//2, top=SCREEN_HEIGHT*.2)
+        self.load_images()
+        self.start_text = FONT.render(&#34;Hit ENTER to start the game&#34;, True, TEXT_COLOR)
+        self.start_rect = self.start_text.get_rect(centerx=SCREEN_WIDTH//2, top=SCREEN_HEIGHT*.9)
+
+    def load_images(self):
+        self.images, self.images_rects = [], []
+        sprite_size = SCREEN_HEIGHT*.2
+        margin_left = (SCREEN_WIDTH - sprite_size*7)//2
+        for i in range(MIN_NUMBER_OF_PLAYRES, MAX_NUMBER_OF_PLAYERS+1):
+            self.images.append(load_sprite_image(i, 0, size=sprite_size, mult=1))
+            self.images_rects.append(pygame.Rect(margin_left+(i-1)*sprite_size*2, SCREEN_HEIGHT*.4,
+                                                 sprite_size, sprite_size))
+        self.reset()
+
+    def reset(self):
+        &#34;&#34;&#34;Change text appearance to normal (white)&#34;&#34;&#34;
+        self.ready_texts, self.ready_text_rects = [], []
+        self.number_of_players = 0
+        for i in range(MIN_NUMBER_OF_PLAYRES, MAX_NUMBER_OF_PLAYERS+1):
+            self.ready_texts.append(FONT.render(f&#34;PRESS {pygame.key.name(CONTROLS[i-1][0]).upper()}&#34;,
+                                                True, TEXT_COLOR))
+            self.ready_text_rects.append(self.ready_texts[i-1].get_rect(
+                centerx=self.images_rects[i-1].centerx, centery=SCREEN_HEIGHT*.65))
+
+    def change_ready_text(self):
+        &#34;&#34;&#34;Change text appearance to ready state - player &#39;logged into the game&#39; (green)&#34;&#34;&#34;
+        for i in range(self.number_of_players):
+            self.ready_texts[i] = FONT.render(&#34;READY!&#34;, True, READY_COLOR)
+            self.ready_text_rects[i] = self.ready_texts[i-1].get_rect(
+                centerx=self.images_rects[i].centerx, centery=SCREEN_HEIGHT*.65)
+
+    def check_events(self):
+        &#34;&#34;&#34;Handling the events&#34;&#34;&#34;
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                self.definite_exit()
+            if event.type == pygame.KEYDOWN:
+                key, keys = event.key, [keys[0] for keys in CONTROLS]
+                # player log in
+                if key in keys:
+                    player_ind = keys.index(key)
+                    if player_ind &lt;= self.number_of_players:
+                        self.number_of_players = max(player_ind+1, self.number_of_players)
+                        self.change_ready_text()
+                elif key == pygame.K_RETURN:
+                    if MIN_NUMBER_OF_PLAYRES &gt; self.number_of_players or \
+                            MAX_NUMBER_OF_PLAYERS &lt; self.number_of_players:
+                        return
+                    self.signals.stage = &#34;game&#34;
+                    self.signals.endgame = False
+
+    def fill_screen(self):
+        &#34;&#34;&#34;Drawing on the screen&#34;&#34;&#34;
+        self.screen.fill(BACKGROUND_COLOR)
+        self.screen.blit(self.intro_text, self.intro_text_rect)
+        self.screen.blit(self.get_ready_text, self.get_ready_rect)
+        for i, image in enumerate(self.images):
+            self.screen.blit(image, self.images_rects[i])
+            self.screen.blit(self.ready_texts[i], self.ready_text_rects[i])
+        self.screen.blit(self.start_text, self.start_rect)
+
+        pygame.display.flip()
+
+    def run(self):
+        &#34;&#34;&#34;Reseeting texts and main loop of the screen&#34;&#34;&#34;
+        self.reset()
+        while self.signals.running and self.signals.endgame:
+            self.check_events()
+            self.fill_screen()
+            self.clock.tick(FPS)
+
+
+class GameScreen(Screen):
+    &#34;&#34;&#34;Main screen containg game mechanics&#34;&#34;&#34;
+    def __init__(self, number_of_players, signals):
+        Screen.__init__(self, signals)
+
+        # object configuration
+        self.number_of_players = number_of_players
+        self.back = Battlefield(self.screen)
+        self.scores = Scoreboard(self.number_of_players, self.screen)
+        self.setup_points()
+        for i in range(1, self.number_of_players+1):
+            Player(i, self.back)
+            for j in range(min(MAX_PACKMANS_PER_PLAYER-self.number_of_players, FIELD_HEIGHT)):
+                enemy = Enemy(self.back)
+                configure_enemy(enemy, self.number_of_players, i, j)
+        for enemy in Enemy.enemies:
+            enemy.choose_direction()
+
+    def __del__(self):
+        # clearing groups when new game will be created
+        Player.players.empty()
+        Enemy.enemies.empty()
+        Point.points.empty()
+
+    def fill_screen(self):
+        &#34;&#34;&#34;Drawing on the screen&#34;&#34;&#34;
+        self.screen.fill(BACKGROUND_COLOR)
+        self.scores.draw_scoreboard()
+        self.back.draw_field()
+        Point.points.draw(self.back.board)
+
+        # pygame.Group.draw() override not working correctly
+        for player in Player.players:
+            player.draw()
+        for enemy in Enemy.enemies:
+            enemy.draw()
+
+        self.screen.blit(self.back.board, (MARGIN_LEFT, MARGIN_TOP))
+        pygame.display.flip()
+
+    def update_sprites(self):
+        Player.players.update()
+        Enemy.enemies.update()
+
+    def check_events(self):
+        &#34;&#34;&#34;Handling events&#34;&#34;&#34;
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                self.definite_exit()
+            if event.type == pygame.KEYDOWN:
+                for player in Player.players:
+                    if event.key in player.keys:
+                        # automatic choose of direction depending on key
+                        player.moving = player.keys.index(event.key)+1
+                        player.image = load_sprite_image(player.id, player.moving)
+                        player.new = False
+                if event.key == pygame.K_ESCAPE:
+                    # interrupting the course of the game in case of the mistake
+                    self.signals.endgame = True
+                    self.signals.stage = &#34;intro&#34;
+
+    def _is_normal_kill(self, enemies):
+        for enemy in enemies:
+            if enemy.active:
+                return True
+        return False
+
+    def detect_collisions(self):
+        &#34;&#34;&#34;
+        Detecting collisions Players-Enemies and Players-Points.
+        As method contains all three sprites it is stored here, in more &#39;outer&#39; scope then sprite class
+        &#34;&#34;&#34;
+        collisions = pygame.sprite.groupcollide(Player.players, Enemy.enemies, False, False)
+        for player, enemies in collisions.items():
+            # player reborn and haven&#39;t moved yet
+            if player.new:
+                continue
+            # no active enemies encountered
+            if not self._is_normal_kill(enemies):
+                break
+            # special kill when powerup is active
+            if player.powerup:
+                enemy_ind = 0
+                while not enemies[enemy_ind].active:
+                    enemy_ind += 1
+                enemy = enemies[enemy_ind]
+                enemy.active = False
+                enemy.inactive_thread.start()
+                self.scores.points[player.id-1] += SPECIAL_POINTS
+                player.powerup = False
+                break
+            # normal kill, without powerup
+            self.scores.points[player.id-1] += KILL_POINTS
+            self.scores.load_points()
+            player.set_beginning_position()
+            player.moving = 0
+            player.new = True
+            player.image = load_sprite_image(player.id, 0)
+
+        # point collisions
+        collisions = pygame.sprite.groupcollide(Player.players, Point.points, False, True)
+        for player, points in collisions.items():
+            if points[0].special:
+                player.powerup = True
+            self.scores.points[player.id-1] += DOT_POINT
+            self.scores.load_points()
+        if len(Point.points) == 0:
+            self.setup_points()
+
+    def setup_points(self):
+        &#34;&#34;&#34;Choosing position of powerups and creating instances of normal points&#34;&#34;&#34;
+        specials = [(randint(2, FIELD_WIDTH-2), randint(2, FIELD_HEIGHT-2))
+                    for _ in range(self.number_of_players)]
+        for i in range(FIELD_HEIGHT):
+            for j in range(FIELD_WIDTH):
+                point_special = (j, i) in specials
+                Point(j, i, special=point_special)
+
+    def score_timer(self):
+        &#34;&#34;&#34;Thread timer until the end of the round (prevent freezing)&#34;&#34;&#34;
+        while (not self.signals.endgame) and self.scores.timer &gt; 0:
+            self.scores.update_time()
+            sleep(1)
+        self.signals.endgame = True
+        self.signals.stage = &#34;end&#34;
+
+    def run(self):
+        &#34;&#34;&#34;Main loop of the screen, creating count thread&#34;&#34;&#34;
+
+        # assuring that unexpected number of players won&#39;t occur
+        assert MIN_NUMBER_OF_PLAYRES &lt;= self.number_of_players &lt;= MAX_NUMBER_OF_PLAYERS
+        timer_threat = Thread(target=self.score_timer)
+        timer_threat.start()
+
+        while not self.signals.endgame:
+            self.check_events()
+            self.update_sprites()
+            self.detect_collisions()
+            self.fill_screen()
+            self.clock.tick(FPS)</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="screens.EndScreen"><code class="flex name class">
+<span>class <span class="ident">EndScreen</span></span>
+<span>(</span><span>signals)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Class with information about win/draw/end</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class EndScreen(Screen):
+    &#34;&#34;&#34;Class with information about win/draw/end&#34;&#34;&#34;
+    def __init__(self, signals):
+        Screen.__init__(self, signals)
+        self.points = []
+        self.end_texts = []
+        self.running = True
+
+    def get_result(self):
+        &#34;&#34;&#34;Determine win/draw or end of round in case of 1 player&#34;&#34;&#34;
+        if len(self.points) == 1:
+            return &#34;end&#34;
+        if self.points.count(max(self.points)) &gt;= 2:
+            return &#34;draw&#34;
+        return &#34;win&#34;
+
+    def update_text(self):
+        &#34;&#34;&#34;Create apropriate messages in case of result&#34;&#34;&#34;
+        self.end_texts = []
+        match self.get_result():
+            case &#34;end&#34;:
+                self.end_texts.append(&#34;TIME PASSED&#34;)
+            case &#34;draw&#34;:
+                line = &#34;DRAW - &#34;
+                for i, points in enumerate(self.points):
+                    if points == max(self.points):
+                        line += f&#34;Player {i+1} &#34;
+                self.end_texts.append(line)
+            case &#34;win&#34;:
+                player_ind = self.points.index(max(self.points))+1
+                self.end_texts.append(f&#34;WIN - Player {player_ind}&#34;)
+        self.end_texts.append(&#34;Hit ENTER to play again&#34;)
+
+    def render_text(self):
+        self.update_text()
+        self.texts = []
+        self.text_rects = []
+        for i, text in enumerate(self.end_texts):
+            self.texts.append(FONT.render(text, True, TEXT_COLOR))
+            self.text_rects.append(
+                self.texts[i].get_rect(centerx=(SCREEN_WIDTH-SCORE_PANEL_WIDTH)//2,
+                                       centery=SCREEN_HEIGHT//(len(self.end_texts)+1)*(i+1))
+            )
+
+    def check_events(self):
+        &#34;&#34;&#34;Handling events&#34;&#34;&#34;
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                self.definite_exit()
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_RETURN:
+                    self.signals.stage = &#34;intro&#34;
+                    self.running = False
+
+    def fill_screen(self):
+        &#34;&#34;&#34;Drawing objects on the screen&#34;&#34;&#34;
+        self.screen.fill(BACKGROUND_COLOR)
+        self.scores.draw_scoreboard()
+        for i, text in enumerate(self.texts):
+            self.screen.blit(text, self.text_rects[i])
+        pygame.display.flip()
+
+    def run(self):
+        &#34;&#34;&#34;
+        Neccessary function to run main.py loop
+        Main loop of the screen, setting order of actions
+        &#34;&#34;&#34;
+        self.running = True
+        self.render_text()
+        while self.signals.running and self.running:
+            self.check_events()
+            self.fill_screen()</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="screens.Screen" href="#screens.Screen">Screen</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="screens.EndScreen.check_events"><code class="name flex">
+<span>def <span class="ident">check_events</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Handling events</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def check_events(self):
+    &#34;&#34;&#34;Handling events&#34;&#34;&#34;
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            self.definite_exit()
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_RETURN:
+                self.signals.stage = &#34;intro&#34;
+                self.running = False</code></pre>
+</details>
+</dd>
+<dt id="screens.EndScreen.fill_screen"><code class="name flex">
+<span>def <span class="ident">fill_screen</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Drawing objects on the screen</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def fill_screen(self):
+    &#34;&#34;&#34;Drawing objects on the screen&#34;&#34;&#34;
+    self.screen.fill(BACKGROUND_COLOR)
+    self.scores.draw_scoreboard()
+    for i, text in enumerate(self.texts):
+        self.screen.blit(text, self.text_rects[i])
+    pygame.display.flip()</code></pre>
+</details>
+</dd>
+<dt id="screens.EndScreen.get_result"><code class="name flex">
+<span>def <span class="ident">get_result</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Determine win/draw or end of round in case of 1 player</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def get_result(self):
+    &#34;&#34;&#34;Determine win/draw or end of round in case of 1 player&#34;&#34;&#34;
+    if len(self.points) == 1:
+        return &#34;end&#34;
+    if self.points.count(max(self.points)) &gt;= 2:
+        return &#34;draw&#34;
+    return &#34;win&#34;</code></pre>
+</details>
+</dd>
+<dt id="screens.EndScreen.render_text"><code class="name flex">
+<span>def <span class="ident">render_text</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def render_text(self):
+    self.update_text()
+    self.texts = []
+    self.text_rects = []
+    for i, text in enumerate(self.end_texts):
+        self.texts.append(FONT.render(text, True, TEXT_COLOR))
+        self.text_rects.append(
+            self.texts[i].get_rect(centerx=(SCREEN_WIDTH-SCORE_PANEL_WIDTH)//2,
+                                   centery=SCREEN_HEIGHT//(len(self.end_texts)+1)*(i+1))
+        )</code></pre>
+</details>
+</dd>
+<dt id="screens.EndScreen.run"><code class="name flex">
+<span>def <span class="ident">run</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Neccessary function to run main.py loop
+Main loop of the screen, setting order of actions</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def run(self):
+    &#34;&#34;&#34;
+    Neccessary function to run main.py loop
+    Main loop of the screen, setting order of actions
+    &#34;&#34;&#34;
+    self.running = True
+    self.render_text()
+    while self.signals.running and self.running:
+        self.check_events()
+        self.fill_screen()</code></pre>
+</details>
+</dd>
+<dt id="screens.EndScreen.update_text"><code class="name flex">
+<span>def <span class="ident">update_text</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create apropriate messages in case of result</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def update_text(self):
+    &#34;&#34;&#34;Create apropriate messages in case of result&#34;&#34;&#34;
+    self.end_texts = []
+    match self.get_result():
+        case &#34;end&#34;:
+            self.end_texts.append(&#34;TIME PASSED&#34;)
+        case &#34;draw&#34;:
+            line = &#34;DRAW - &#34;
+            for i, points in enumerate(self.points):
+                if points == max(self.points):
+                    line += f&#34;Player {i+1} &#34;
+            self.end_texts.append(line)
+        case &#34;win&#34;:
+            player_ind = self.points.index(max(self.points))+1
+            self.end_texts.append(f&#34;WIN - Player {player_ind}&#34;)
+    self.end_texts.append(&#34;Hit ENTER to play again&#34;)</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="screens.Screen" href="#screens.Screen">Screen</a></b></code>:
+<ul class="hlist">
+<li><code><a title="screens.Screen.definite_exit" href="#screens.Screen.definite_exit">definite_exit</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="screens.GameScreen"><code class="flex name class">
+<span>class <span class="ident">GameScreen</span></span>
+<span>(</span><span>number_of_players, signals)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Main screen containg game mechanics</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class GameScreen(Screen):
+    &#34;&#34;&#34;Main screen containg game mechanics&#34;&#34;&#34;
+    def __init__(self, number_of_players, signals):
+        Screen.__init__(self, signals)
+
+        # object configuration
+        self.number_of_players = number_of_players
+        self.back = Battlefield(self.screen)
+        self.scores = Scoreboard(self.number_of_players, self.screen)
+        self.setup_points()
+        for i in range(1, self.number_of_players+1):
+            Player(i, self.back)
+            for j in range(min(MAX_PACKMANS_PER_PLAYER-self.number_of_players, FIELD_HEIGHT)):
+                enemy = Enemy(self.back)
+                configure_enemy(enemy, self.number_of_players, i, j)
+        for enemy in Enemy.enemies:
+            enemy.choose_direction()
+
+    def __del__(self):
+        # clearing groups when new game will be created
+        Player.players.empty()
+        Enemy.enemies.empty()
+        Point.points.empty()
+
+    def fill_screen(self):
+        &#34;&#34;&#34;Drawing on the screen&#34;&#34;&#34;
+        self.screen.fill(BACKGROUND_COLOR)
+        self.scores.draw_scoreboard()
+        self.back.draw_field()
+        Point.points.draw(self.back.board)
+
+        # pygame.Group.draw() override not working correctly
+        for player in Player.players:
+            player.draw()
+        for enemy in Enemy.enemies:
+            enemy.draw()
+
+        self.screen.blit(self.back.board, (MARGIN_LEFT, MARGIN_TOP))
+        pygame.display.flip()
+
+    def update_sprites(self):
+        Player.players.update()
+        Enemy.enemies.update()
+
+    def check_events(self):
+        &#34;&#34;&#34;Handling events&#34;&#34;&#34;
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                self.definite_exit()
+            if event.type == pygame.KEYDOWN:
+                for player in Player.players:
+                    if event.key in player.keys:
+                        # automatic choose of direction depending on key
+                        player.moving = player.keys.index(event.key)+1
+                        player.image = load_sprite_image(player.id, player.moving)
+                        player.new = False
+                if event.key == pygame.K_ESCAPE:
+                    # interrupting the course of the game in case of the mistake
+                    self.signals.endgame = True
+                    self.signals.stage = &#34;intro&#34;
+
+    def _is_normal_kill(self, enemies):
+        for enemy in enemies:
+            if enemy.active:
+                return True
+        return False
+
+    def detect_collisions(self):
+        &#34;&#34;&#34;
+        Detecting collisions Players-Enemies and Players-Points.
+        As method contains all three sprites it is stored here, in more &#39;outer&#39; scope then sprite class
+        &#34;&#34;&#34;
+        collisions = pygame.sprite.groupcollide(Player.players, Enemy.enemies, False, False)
+        for player, enemies in collisions.items():
+            # player reborn and haven&#39;t moved yet
+            if player.new:
+                continue
+            # no active enemies encountered
+            if not self._is_normal_kill(enemies):
+                break
+            # special kill when powerup is active
+            if player.powerup:
+                enemy_ind = 0
+                while not enemies[enemy_ind].active:
+                    enemy_ind += 1
+                enemy = enemies[enemy_ind]
+                enemy.active = False
+                enemy.inactive_thread.start()
+                self.scores.points[player.id-1] += SPECIAL_POINTS
+                player.powerup = False
+                break
+            # normal kill, without powerup
+            self.scores.points[player.id-1] += KILL_POINTS
+            self.scores.load_points()
+            player.set_beginning_position()
+            player.moving = 0
+            player.new = True
+            player.image = load_sprite_image(player.id, 0)
+
+        # point collisions
+        collisions = pygame.sprite.groupcollide(Player.players, Point.points, False, True)
+        for player, points in collisions.items():
+            if points[0].special:
+                player.powerup = True
+            self.scores.points[player.id-1] += DOT_POINT
+            self.scores.load_points()
+        if len(Point.points) == 0:
+            self.setup_points()
+
+    def setup_points(self):
+        &#34;&#34;&#34;Choosing position of powerups and creating instances of normal points&#34;&#34;&#34;
+        specials = [(randint(2, FIELD_WIDTH-2), randint(2, FIELD_HEIGHT-2))
+                    for _ in range(self.number_of_players)]
+        for i in range(FIELD_HEIGHT):
+            for j in range(FIELD_WIDTH):
+                point_special = (j, i) in specials
+                Point(j, i, special=point_special)
+
+    def score_timer(self):
+        &#34;&#34;&#34;Thread timer until the end of the round (prevent freezing)&#34;&#34;&#34;
+        while (not self.signals.endgame) and self.scores.timer &gt; 0:
+            self.scores.update_time()
+            sleep(1)
+        self.signals.endgame = True
+        self.signals.stage = &#34;end&#34;
+
+    def run(self):
+        &#34;&#34;&#34;Main loop of the screen, creating count thread&#34;&#34;&#34;
+
+        # assuring that unexpected number of players won&#39;t occur
+        assert MIN_NUMBER_OF_PLAYRES &lt;= self.number_of_players &lt;= MAX_NUMBER_OF_PLAYERS
+        timer_threat = Thread(target=self.score_timer)
+        timer_threat.start()
+
+        while not self.signals.endgame:
+            self.check_events()
+            self.update_sprites()
+            self.detect_collisions()
+            self.fill_screen()
+            self.clock.tick(FPS)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="screens.Screen" href="#screens.Screen">Screen</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="screens.GameScreen.check_events"><code class="name flex">
+<span>def <span class="ident">check_events</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Handling events</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def check_events(self):
+    &#34;&#34;&#34;Handling events&#34;&#34;&#34;
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            self.definite_exit()
+        if event.type == pygame.KEYDOWN:
+            for player in Player.players:
+                if event.key in player.keys:
+                    # automatic choose of direction depending on key
+                    player.moving = player.keys.index(event.key)+1
+                    player.image = load_sprite_image(player.id, player.moving)
+                    player.new = False
+            if event.key == pygame.K_ESCAPE:
+                # interrupting the course of the game in case of the mistake
+                self.signals.endgame = True
+                self.signals.stage = &#34;intro&#34;</code></pre>
+</details>
+</dd>
+<dt id="screens.GameScreen.detect_collisions"><code class="name flex">
+<span>def <span class="ident">detect_collisions</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Detecting collisions Players-Enemies and Players-Points.
+As method contains all three sprites it is stored here, in more 'outer' scope then sprite class</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def detect_collisions(self):
+    &#34;&#34;&#34;
+    Detecting collisions Players-Enemies and Players-Points.
+    As method contains all three sprites it is stored here, in more &#39;outer&#39; scope then sprite class
+    &#34;&#34;&#34;
+    collisions = pygame.sprite.groupcollide(Player.players, Enemy.enemies, False, False)
+    for player, enemies in collisions.items():
+        # player reborn and haven&#39;t moved yet
+        if player.new:
+            continue
+        # no active enemies encountered
+        if not self._is_normal_kill(enemies):
+            break
+        # special kill when powerup is active
+        if player.powerup:
+            enemy_ind = 0
+            while not enemies[enemy_ind].active:
+                enemy_ind += 1
+            enemy = enemies[enemy_ind]
+            enemy.active = False
+            enemy.inactive_thread.start()
+            self.scores.points[player.id-1] += SPECIAL_POINTS
+            player.powerup = False
+            break
+        # normal kill, without powerup
+        self.scores.points[player.id-1] += KILL_POINTS
+        self.scores.load_points()
+        player.set_beginning_position()
+        player.moving = 0
+        player.new = True
+        player.image = load_sprite_image(player.id, 0)
+
+    # point collisions
+    collisions = pygame.sprite.groupcollide(Player.players, Point.points, False, True)
+    for player, points in collisions.items():
+        if points[0].special:
+            player.powerup = True
+        self.scores.points[player.id-1] += DOT_POINT
+        self.scores.load_points()
+    if len(Point.points) == 0:
+        self.setup_points()</code></pre>
+</details>
+</dd>
+<dt id="screens.GameScreen.fill_screen"><code class="name flex">
+<span>def <span class="ident">fill_screen</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Drawing on the screen</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def fill_screen(self):
+    &#34;&#34;&#34;Drawing on the screen&#34;&#34;&#34;
+    self.screen.fill(BACKGROUND_COLOR)
+    self.scores.draw_scoreboard()
+    self.back.draw_field()
+    Point.points.draw(self.back.board)
+
+    # pygame.Group.draw() override not working correctly
+    for player in Player.players:
+        player.draw()
+    for enemy in Enemy.enemies:
+        enemy.draw()
+
+    self.screen.blit(self.back.board, (MARGIN_LEFT, MARGIN_TOP))
+    pygame.display.flip()</code></pre>
+</details>
+</dd>
+<dt id="screens.GameScreen.run"><code class="name flex">
+<span>def <span class="ident">run</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Main loop of the screen, creating count thread</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def run(self):
+    &#34;&#34;&#34;Main loop of the screen, creating count thread&#34;&#34;&#34;
+
+    # assuring that unexpected number of players won&#39;t occur
+    assert MIN_NUMBER_OF_PLAYRES &lt;= self.number_of_players &lt;= MAX_NUMBER_OF_PLAYERS
+    timer_threat = Thread(target=self.score_timer)
+    timer_threat.start()
+
+    while not self.signals.endgame:
+        self.check_events()
+        self.update_sprites()
+        self.detect_collisions()
+        self.fill_screen()
+        self.clock.tick(FPS)</code></pre>
+</details>
+</dd>
+<dt id="screens.GameScreen.score_timer"><code class="name flex">
+<span>def <span class="ident">score_timer</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Thread timer until the end of the round (prevent freezing)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def score_timer(self):
+    &#34;&#34;&#34;Thread timer until the end of the round (prevent freezing)&#34;&#34;&#34;
+    while (not self.signals.endgame) and self.scores.timer &gt; 0:
+        self.scores.update_time()
+        sleep(1)
+    self.signals.endgame = True
+    self.signals.stage = &#34;end&#34;</code></pre>
+</details>
+</dd>
+<dt id="screens.GameScreen.setup_points"><code class="name flex">
+<span>def <span class="ident">setup_points</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Choosing position of powerups and creating instances of normal points</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def setup_points(self):
+    &#34;&#34;&#34;Choosing position of powerups and creating instances of normal points&#34;&#34;&#34;
+    specials = [(randint(2, FIELD_WIDTH-2), randint(2, FIELD_HEIGHT-2))
+                for _ in range(self.number_of_players)]
+    for i in range(FIELD_HEIGHT):
+        for j in range(FIELD_WIDTH):
+            point_special = (j, i) in specials
+            Point(j, i, special=point_special)</code></pre>
+</details>
+</dd>
+<dt id="screens.GameScreen.update_sprites"><code class="name flex">
+<span>def <span class="ident">update_sprites</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def update_sprites(self):
+    Player.players.update()
+    Enemy.enemies.update()</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="screens.Screen" href="#screens.Screen">Screen</a></b></code>:
+<ul class="hlist">
+<li><code><a title="screens.Screen.definite_exit" href="#screens.Screen.definite_exit">definite_exit</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="screens.IntroScreen"><code class="flex name class">
+<span>class <span class="ident">IntroScreen</span></span>
+<span>(</span><span>signals)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Welcome screen of the game</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class IntroScreen(Screen):
+    &#34;&#34;&#34;Welcome screen of the game&#34;&#34;&#34;
+    def __init__(self, signals):
+        Screen.__init__(self, signals)
+        self.number_of_players = 0
+        # rendering static texts
+        self.intro_text = TITLE_FONT.render(&#34;PACMAN multiplayer&#34;, True, TEXT_COLOR)
+        self.intro_text_rect = self.intro_text.get_rect(centerx=SCREEN_WIDTH//2, top=SCREEN_HEIGHT*.05)
+        self.get_ready_text = FONT.render(&#34;Click button that is shown below to confirm&#34;, True, TEXT_COLOR)
+        self.get_ready_rect = self.get_ready_text.get_rect(centerx=SCREEN_WIDTH//2, top=SCREEN_HEIGHT*.2)
+        self.load_images()
+        self.start_text = FONT.render(&#34;Hit ENTER to start the game&#34;, True, TEXT_COLOR)
+        self.start_rect = self.start_text.get_rect(centerx=SCREEN_WIDTH//2, top=SCREEN_HEIGHT*.9)
+
+    def load_images(self):
+        self.images, self.images_rects = [], []
+        sprite_size = SCREEN_HEIGHT*.2
+        margin_left = (SCREEN_WIDTH - sprite_size*7)//2
+        for i in range(MIN_NUMBER_OF_PLAYRES, MAX_NUMBER_OF_PLAYERS+1):
+            self.images.append(load_sprite_image(i, 0, size=sprite_size, mult=1))
+            self.images_rects.append(pygame.Rect(margin_left+(i-1)*sprite_size*2, SCREEN_HEIGHT*.4,
+                                                 sprite_size, sprite_size))
+        self.reset()
+
+    def reset(self):
+        &#34;&#34;&#34;Change text appearance to normal (white)&#34;&#34;&#34;
+        self.ready_texts, self.ready_text_rects = [], []
+        self.number_of_players = 0
+        for i in range(MIN_NUMBER_OF_PLAYRES, MAX_NUMBER_OF_PLAYERS+1):
+            self.ready_texts.append(FONT.render(f&#34;PRESS {pygame.key.name(CONTROLS[i-1][0]).upper()}&#34;,
+                                                True, TEXT_COLOR))
+            self.ready_text_rects.append(self.ready_texts[i-1].get_rect(
+                centerx=self.images_rects[i-1].centerx, centery=SCREEN_HEIGHT*.65))
+
+    def change_ready_text(self):
+        &#34;&#34;&#34;Change text appearance to ready state - player &#39;logged into the game&#39; (green)&#34;&#34;&#34;
+        for i in range(self.number_of_players):
+            self.ready_texts[i] = FONT.render(&#34;READY!&#34;, True, READY_COLOR)
+            self.ready_text_rects[i] = self.ready_texts[i-1].get_rect(
+                centerx=self.images_rects[i].centerx, centery=SCREEN_HEIGHT*.65)
+
+    def check_events(self):
+        &#34;&#34;&#34;Handling the events&#34;&#34;&#34;
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                self.definite_exit()
+            if event.type == pygame.KEYDOWN:
+                key, keys = event.key, [keys[0] for keys in CONTROLS]
+                # player log in
+                if key in keys:
+                    player_ind = keys.index(key)
+                    if player_ind &lt;= self.number_of_players:
+                        self.number_of_players = max(player_ind+1, self.number_of_players)
+                        self.change_ready_text()
+                elif key == pygame.K_RETURN:
+                    if MIN_NUMBER_OF_PLAYRES &gt; self.number_of_players or \
+                            MAX_NUMBER_OF_PLAYERS &lt; self.number_of_players:
+                        return
+                    self.signals.stage = &#34;game&#34;
+                    self.signals.endgame = False
+
+    def fill_screen(self):
+        &#34;&#34;&#34;Drawing on the screen&#34;&#34;&#34;
+        self.screen.fill(BACKGROUND_COLOR)
+        self.screen.blit(self.intro_text, self.intro_text_rect)
+        self.screen.blit(self.get_ready_text, self.get_ready_rect)
+        for i, image in enumerate(self.images):
+            self.screen.blit(image, self.images_rects[i])
+            self.screen.blit(self.ready_texts[i], self.ready_text_rects[i])
+        self.screen.blit(self.start_text, self.start_rect)
+
+        pygame.display.flip()
+
+    def run(self):
+        &#34;&#34;&#34;Reseeting texts and main loop of the screen&#34;&#34;&#34;
+        self.reset()
+        while self.signals.running and self.signals.endgame:
+            self.check_events()
+            self.fill_screen()
+            self.clock.tick(FPS)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="screens.Screen" href="#screens.Screen">Screen</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="screens.IntroScreen.change_ready_text"><code class="name flex">
+<span>def <span class="ident">change_ready_text</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Change text appearance to ready state - player 'logged into the game' (green)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def change_ready_text(self):
+    &#34;&#34;&#34;Change text appearance to ready state - player &#39;logged into the game&#39; (green)&#34;&#34;&#34;
+    for i in range(self.number_of_players):
+        self.ready_texts[i] = FONT.render(&#34;READY!&#34;, True, READY_COLOR)
+        self.ready_text_rects[i] = self.ready_texts[i-1].get_rect(
+            centerx=self.images_rects[i].centerx, centery=SCREEN_HEIGHT*.65)</code></pre>
+</details>
+</dd>
+<dt id="screens.IntroScreen.check_events"><code class="name flex">
+<span>def <span class="ident">check_events</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Handling the events</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def check_events(self):
+    &#34;&#34;&#34;Handling the events&#34;&#34;&#34;
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            self.definite_exit()
+        if event.type == pygame.KEYDOWN:
+            key, keys = event.key, [keys[0] for keys in CONTROLS]
+            # player log in
+            if key in keys:
+                player_ind = keys.index(key)
+                if player_ind &lt;= self.number_of_players:
+                    self.number_of_players = max(player_ind+1, self.number_of_players)
+                    self.change_ready_text()
+            elif key == pygame.K_RETURN:
+                if MIN_NUMBER_OF_PLAYRES &gt; self.number_of_players or \
+                        MAX_NUMBER_OF_PLAYERS &lt; self.number_of_players:
+                    return
+                self.signals.stage = &#34;game&#34;
+                self.signals.endgame = False</code></pre>
+</details>
+</dd>
+<dt id="screens.IntroScreen.fill_screen"><code class="name flex">
+<span>def <span class="ident">fill_screen</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Drawing on the screen</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def fill_screen(self):
+    &#34;&#34;&#34;Drawing on the screen&#34;&#34;&#34;
+    self.screen.fill(BACKGROUND_COLOR)
+    self.screen.blit(self.intro_text, self.intro_text_rect)
+    self.screen.blit(self.get_ready_text, self.get_ready_rect)
+    for i, image in enumerate(self.images):
+        self.screen.blit(image, self.images_rects[i])
+        self.screen.blit(self.ready_texts[i], self.ready_text_rects[i])
+    self.screen.blit(self.start_text, self.start_rect)
+
+    pygame.display.flip()</code></pre>
+</details>
+</dd>
+<dt id="screens.IntroScreen.load_images"><code class="name flex">
+<span>def <span class="ident">load_images</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def load_images(self):
+    self.images, self.images_rects = [], []
+    sprite_size = SCREEN_HEIGHT*.2
+    margin_left = (SCREEN_WIDTH - sprite_size*7)//2
+    for i in range(MIN_NUMBER_OF_PLAYRES, MAX_NUMBER_OF_PLAYERS+1):
+        self.images.append(load_sprite_image(i, 0, size=sprite_size, mult=1))
+        self.images_rects.append(pygame.Rect(margin_left+(i-1)*sprite_size*2, SCREEN_HEIGHT*.4,
+                                             sprite_size, sprite_size))
+    self.reset()</code></pre>
+</details>
+</dd>
+<dt id="screens.IntroScreen.reset"><code class="name flex">
+<span>def <span class="ident">reset</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Change text appearance to normal (white)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def reset(self):
+    &#34;&#34;&#34;Change text appearance to normal (white)&#34;&#34;&#34;
+    self.ready_texts, self.ready_text_rects = [], []
+    self.number_of_players = 0
+    for i in range(MIN_NUMBER_OF_PLAYRES, MAX_NUMBER_OF_PLAYERS+1):
+        self.ready_texts.append(FONT.render(f&#34;PRESS {pygame.key.name(CONTROLS[i-1][0]).upper()}&#34;,
+                                            True, TEXT_COLOR))
+        self.ready_text_rects.append(self.ready_texts[i-1].get_rect(
+            centerx=self.images_rects[i-1].centerx, centery=SCREEN_HEIGHT*.65))</code></pre>
+</details>
+</dd>
+<dt id="screens.IntroScreen.run"><code class="name flex">
+<span>def <span class="ident">run</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Reseeting texts and main loop of the screen</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def run(self):
+    &#34;&#34;&#34;Reseeting texts and main loop of the screen&#34;&#34;&#34;
+    self.reset()
+    while self.signals.running and self.signals.endgame:
+        self.check_events()
+        self.fill_screen()
+        self.clock.tick(FPS)</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="screens.Screen" href="#screens.Screen">Screen</a></b></code>:
+<ul class="hlist">
+<li><code><a title="screens.Screen.definite_exit" href="#screens.Screen.definite_exit">definite_exit</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="screens.Screen"><code class="flex name class">
+<span>class <span class="ident">Screen</span></span>
+<span>(</span><span>signals)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Basic class of Screen
+Implementing the concept of Abstract class</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Screen():
+    &#34;&#34;&#34;
+    Basic class of Screen
+    Implementing the concept of Abstract class
+    &#34;&#34;&#34;
+    def __init__(self, signals):
+        self.screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+        self.signals = signals
+        self.clock = pygame.time.Clock()
+
+    def definite_exit(self):
+        &#34;&#34;&#34;Turning off all the signals&#34;&#34;&#34;
+        self.signals.running = False
+        self.signals.endgame = True
+        pygame.quit()
+        sys.exit(0)</code></pre>
+</details>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="screens.EndScreen" href="#screens.EndScreen">EndScreen</a></li>
+<li><a title="screens.GameScreen" href="#screens.GameScreen">GameScreen</a></li>
+<li><a title="screens.IntroScreen" href="#screens.IntroScreen">IntroScreen</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="screens.Screen.definite_exit"><code class="name flex">
+<span>def <span class="ident">definite_exit</span></span>(<span>self)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Turning off all the signals</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def definite_exit(self):
+    &#34;&#34;&#34;Turning off all the signals&#34;&#34;&#34;
+    self.signals.running = False
+    self.signals.endgame = True
+    pygame.quit()
+    sys.exit(0)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="screens.EndScreen" href="#screens.EndScreen">EndScreen</a></code></h4>
+<ul class="two-column">
+<li><code><a title="screens.EndScreen.check_events" href="#screens.EndScreen.check_events">check_events</a></code></li>
+<li><code><a title="screens.EndScreen.fill_screen" href="#screens.EndScreen.fill_screen">fill_screen</a></code></li>
+<li><code><a title="screens.EndScreen.get_result" href="#screens.EndScreen.get_result">get_result</a></code></li>
+<li><code><a title="screens.EndScreen.render_text" href="#screens.EndScreen.render_text">render_text</a></code></li>
+<li><code><a title="screens.EndScreen.run" href="#screens.EndScreen.run">run</a></code></li>
+<li><code><a title="screens.EndScreen.update_text" href="#screens.EndScreen.update_text">update_text</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="screens.GameScreen" href="#screens.GameScreen">GameScreen</a></code></h4>
+<ul class="two-column">
+<li><code><a title="screens.GameScreen.check_events" href="#screens.GameScreen.check_events">check_events</a></code></li>
+<li><code><a title="screens.GameScreen.detect_collisions" href="#screens.GameScreen.detect_collisions">detect_collisions</a></code></li>
+<li><code><a title="screens.GameScreen.fill_screen" href="#screens.GameScreen.fill_screen">fill_screen</a></code></li>
+<li><code><a title="screens.GameScreen.run" href="#screens.GameScreen.run">run</a></code></li>
+<li><code><a title="screens.GameScreen.score_timer" href="#screens.GameScreen.score_timer">score_timer</a></code></li>
+<li><code><a title="screens.GameScreen.setup_points" href="#screens.GameScreen.setup_points">setup_points</a></code></li>
+<li><code><a title="screens.GameScreen.update_sprites" href="#screens.GameScreen.update_sprites">update_sprites</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="screens.IntroScreen" href="#screens.IntroScreen">IntroScreen</a></code></h4>
+<ul class="two-column">
+<li><code><a title="screens.IntroScreen.change_ready_text" href="#screens.IntroScreen.change_ready_text">change_ready_text</a></code></li>
+<li><code><a title="screens.IntroScreen.check_events" href="#screens.IntroScreen.check_events">check_events</a></code></li>
+<li><code><a title="screens.IntroScreen.fill_screen" href="#screens.IntroScreen.fill_screen">fill_screen</a></code></li>
+<li><code><a title="screens.IntroScreen.load_images" href="#screens.IntroScreen.load_images">load_images</a></code></li>
+<li><code><a title="screens.IntroScreen.reset" href="#screens.IntroScreen.reset">reset</a></code></li>
+<li><code><a title="screens.IntroScreen.run" href="#screens.IntroScreen.run">run</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="screens.Screen" href="#screens.Screen">Screen</a></code></h4>
+<ul class="">
+<li><code><a title="screens.Screen.definite_exit" href="#screens.Screen.definite_exit">definite_exit</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

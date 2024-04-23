@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module events</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title">events</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Csp%5Cdesktop%5Csl23%5Cpong%5Cevents.py">c:\users\sp\desktop\sl23\pong\events.py</a></td></tr></table>
+    <p><span class="code">Module&nbsp;including&nbsp;function&nbsp;for&nbsp;controlling<br>
+keyboard&nbsp;events,&nbsp;screen&nbsp;updates&nbsp;and&nbsp;objects&nbsp;behaviour</span></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="objects.html">objects</a><br>
+</td><td class="multicolumn"><a href="pygame.html">pygame</a><br>
+</td><td class="multicolumn"><a href="sys.html">sys</a><br>
+</td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="builtins.html#object">builtins.object</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="events.html#EventsController">EventsController</a>
+</dt></dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="EventsController">class <strong>EventsController</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#EventsController">EventsController</a>(screen:&nbsp;pygame.surface.Surface,&nbsp;ball:&nbsp;objects.Ball,&nbsp;pads:&nbsp;list[objects.Pad],&nbsp;scoreboard:&nbsp;objects.Scoreboard)<br>
+&nbsp;<br>
+Class&nbsp;storing&nbsp;functions&nbsp;neccessary&nbsp;to&nbsp;control<br>
+events&nbsp;and&nbsp;objects&nbsp;movement&nbsp;+&nbsp;interaction.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;screen&nbsp;(pygame.surface.Surface):&nbsp;display&nbsp;area<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ball&nbsp;(objects.Ball):&nbsp;instance&nbsp;of&nbsp;Ball&nbsp;class<br>
+&nbsp;&nbsp;&nbsp;&nbsp;pads&nbsp;(list[objects.Pad]):&nbsp;two-elements&nbsp;list&nbsp;of&nbsp;Pads&nbsp;(players)<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="EventsController-__init__"><strong>__init__</strong></a>(self, screen: pygame.surface.Surface, ball: objects.Ball, pads: list[objects.Pad], scoreboard: objects.Scoreboard)</dt><dd><span class="code">Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</span></dd></dl>
+
+<dl><dt><a name="EventsController-change_moving_parameters"><strong>change_moving_parameters</strong></a>(self, key: int, value: bool)</dt><dd><span class="code">Changing&nbsp;value&nbsp;of&nbsp;pads&nbsp;direction&nbsp;parameters<br>
+depending&nbsp;on&nbsp;event&nbsp;type&nbsp;(KEYDOWN,&nbsp;KEYUP)&nbsp;and&nbsp;key&nbsp;pressed<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;key&nbsp;(int):&nbsp;ascii&nbsp;code&nbsp;of&nbsp;key&nbsp;that&nbsp;was&nbsp;pressed&nbsp;or&nbsp;released<br>
+&nbsp;&nbsp;&nbsp;&nbsp;value&nbsp;(bool):&nbsp;True&nbsp;for&nbsp;KEYDOWN,&nbsp;False&nbsp;for&nbsp;KEYUP<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None</span></dd></dl>
+
+<dl><dt><a name="EventsController-check_and_react_if_scored"><strong>check_and_react_if_scored</strong></a>(self)</dt><dd><span class="code">Checks&nbsp;if&nbsp;ball&nbsp;touches&nbsp;wall&nbsp;and&nbsp;eventually<br>
+resets&nbsp;some&nbsp;parameters&nbsp;of&nbsp;the&nbsp;game&nbsp;adequalty.<br>
+Than&nbsp;stops&nbsp;the&nbsp;game&nbsp;for&nbsp;a&nbsp;few&nbsp;seconds,&nbsp;letting<br>
+the&nbsp;players&nbsp;prepare<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None</span></dd></dl>
+
+<dl><dt><a name="EventsController-check_collisions"><strong>check_collisions</strong></a>(self)</dt><dd><span class="code">Functions&nbsp;supposed&nbsp;to&nbsp;check&nbsp;if&nbsp;ball&nbsp;collides&nbsp;with&nbsp;one&nbsp;of&nbsp;the<br>
+pads.&nbsp;If&nbsp;so,&nbsp;it&nbsp;changes&nbsp;ball&nbsp;direction&nbsp;adequately&nbsp;to&nbsp;the<br>
+velocity&nbsp;of&nbsp;the&nbsp;pad.&nbsp;It&nbsp;also&nbsp;ensures&nbsp;that&nbsp;ball<br>
+cannot&nbsp;pass&nbsp;through&nbsp;the&nbsp;pad.&nbsp;After&nbsp;every&nbsp;collision&nbsp;it&nbsp;increases<br>
+speed&nbsp;of&nbsp;the&nbsp;game.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None</span></dd></dl>
+
+<dl><dt><a name="EventsController-check_events"><strong>check_events</strong></a>(self)</dt><dd><span class="code">Function&nbsp;that&nbsp;checks&nbsp;if&nbsp;any&nbsp;keyboard&nbsp;events&nbsp;occur<br>
+and&nbsp;trigger&nbsp;apropriate&nbsp;reaction.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None</span></dd></dl>
+
+<dl><dt><a name="EventsController-react_to_top_collisions"><strong>react_to_top_collisions</strong></a>(self, pad: objects.Pad)</dt><dd><span class="code">Reacts&nbsp;when&nbsp;a&nbsp;ball&nbsp;hits&nbsp;bottom&nbsp;or&nbsp;top&nbsp;of&nbsp;the&nbsp;pad<br>
+and&nbsp;doesn't&nbsp;let&nbsp;it&nbsp;fall&nbsp;through&nbsp;it<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;pad&nbsp;(objects.Pad):&nbsp;palette&nbsp;which&nbsp;collided&nbsp;with&nbsp;the&nbsp;ball<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None</span></dd></dl>
+
+<dl><dt><a name="EventsController-trigger_all_events"><strong>trigger_all_events</strong></a>(self)</dt><dd><span class="code">Runs&nbsp;all&nbsp;events&nbsp;in&nbsp;apropriate&nbsp;order.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None</span></dd></dl>
+
+<dl><dt><a name="EventsController-update_objects"><strong>update_objects</strong></a>(self)</dt><dd><span class="code">Changes&nbsp;all&nbsp;crucial&nbsp;parameters&nbsp;of&nbsp;movement<br>
+of&nbsp;all&nbsp;objects,&nbsp;like&nbsp;direction,&nbsp;speed,&nbsp;and&nbsp;position.<br>
+Because&nbsp;collision&nbsp;require&nbsp;change&nbsp;of&nbsp;ball&nbsp;direction<br>
+method&nbsp;check_collision&nbsp;is&nbsp;also&nbsp;invoked<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None</span></dd></dl>
+
+<dl><dt><a name="EventsController-update_screen"><strong>update_screen</strong></a>(self)</dt><dd><span class="code">Function&nbsp;rendering&nbsp;objects&nbsp;on&nbsp;screen.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+    
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-atan"><strong>atan</strong></a>(x, /)</dt><dd><span class="code">Return&nbsp;the&nbsp;arc&nbsp;tangent&nbsp;(measured&nbsp;in&nbsp;radians)&nbsp;of&nbsp;x.<br>
+&nbsp;<br>
+The&nbsp;result&nbsp;is&nbsp;between&nbsp;-pi/2&nbsp;and&nbsp;pi/2.</span></dd></dl>
+ <dl><dt><a name="-cos"><strong>cos</strong></a>(x, /)</dt><dd><span class="code">Return&nbsp;the&nbsp;cosine&nbsp;of&nbsp;x&nbsp;(measured&nbsp;in&nbsp;radians).</span></dd></dl>
+ <dl><dt><a name="-sin"><strong>sin</strong></a>(x, /)</dt><dd><span class="code">Return&nbsp;the&nbsp;sine&nbsp;of&nbsp;x&nbsp;(measured&nbsp;in&nbsp;radians).</span></dd></dl>
+ <dl><dt><a name="-sqrt"><strong>sqrt</strong></a>(x, /)</dt><dd><span class="code">Return&nbsp;the&nbsp;square&nbsp;root&nbsp;of&nbsp;x.</span></dd></dl>
+</td></tr></table><p>
+<table class="section">
+<tr class="decor data-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Data</strong></td></tr>
+    
+<tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><strong>BACKGROUND_COLOR</strong> = (0, 0, 0)<br>
+<strong>BALL_RADIUS</strong> = 10<br>
+<strong>BALL_SPEED</strong> = 12<br>
+<strong>PAD_SIZE</strong> = (20, 200)<br>
+<strong>PAD_SPEED</strong> = 4<br>
+<strong>STARTING_TICK</strong> = 2000<br>
+<strong>pi</strong> = 3.141592653589793</td></tr></table>
+</body></html>

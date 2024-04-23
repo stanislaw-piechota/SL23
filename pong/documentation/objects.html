@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module objects</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title">objects</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Csp%5Cdesktop%5Csl23%5Cpong%5Cobjects.py">c:\users\sp\desktop\sl23\pong\objects.py</a></td></tr></table>
+    <p><span class="code">Module&nbsp;which&nbsp;contains&nbsp;<a href="builtins.html#object">object</a>&nbsp;responsible&nbsp;for&nbsp;gameplay<br>
+and&nbsp;graphic&nbsp;representation&nbsp;on&nbsp;the&nbsp;screen</span></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="functions.html">functions</a><br>
+</td><td class="multicolumn"><a href="pygame.html">pygame</a><br>
+</td><td class="multicolumn"></td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="builtins.html#object">builtins.object</a>
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="objects.html#Ball">Ball</a>
+</dt><dt class="heading-text"><a href="objects.html#Pad">Pad</a>
+</dt><dt class="heading-text"><a href="objects.html#Scoreboard">Scoreboard</a>
+</dt></dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Ball">class <strong>Ball</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#Ball">Ball</a>(screen:&nbsp;pygame.surface.Surface,&nbsp;scoreboard)<br>
+&nbsp;<br>
+Object&nbsp;which&nbsp;flies&nbsp;through&nbsp;the&nbsp;screen<br>
+and&nbsp;collides&nbsp;with&nbsp;pads<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;screen&nbsp;(pygame.surface.Surface):&nbsp;display&nbsp;area<br>
+&nbsp;&nbsp;&nbsp;&nbsp;scoreboard&nbsp;(objects.<a href="#Scoreboard">Scoreboard</a>):&nbsp;<a href="builtins.html#object">object</a>&nbsp;containg&nbsp;points&nbsp;variables<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="Ball-__init__"><strong>__init__</strong></a>(self, screen: pygame.surface.Surface, scoreboard)</dt><dd><span class="code">Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</span></dd></dl>
+
+<dl><dt><a name="Ball-set_beginning_position"><strong>set_beginning_position</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Ball-show"><strong>show</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Ball-update_direction"><strong>update_direction</strong></a>(self)</dt><dd><span class="code">Changes&nbsp;ball&nbsp;direction&nbsp;if&nbsp;touches&nbsp;horizontal&nbsp;walls<br>
+and&nbsp;changes&nbsp;values&nbsp;of&nbsp;the&nbsp;flag&nbsp;touches_vertical_wall<br>
+which&nbsp;pauses&nbsp;the&nbsp;game<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None</span></dd></dl>
+
+<dl><dt><a name="Ball-update_position"><strong>update_position</strong></a>(self)</dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Pad">class <strong>Pad</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#Pad">Pad</a>(screen:&nbsp;pygame.surface.Surface,&nbsp;x_position:&nbsp;int,&nbsp;keys:&nbsp;list[int])<br>
+&nbsp;<br>
+Pallete&nbsp;which&nbsp;is&nbsp;controlled&nbsp;by&nbsp;the&nbsp;player<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;screen&nbsp;(pygame.surface.Surface):&nbsp;display&nbsp;area<br>
+&nbsp;&nbsp;&nbsp;&nbsp;x_position&nbsp;(int):&nbsp;x&nbsp;coordinate&nbsp;where&nbsp;pad&nbsp;should&nbsp;be&nbsp;located,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;varies&nbsp;for&nbsp;left&nbsp;and&nbsp;right&nbsp;pad<br>
+&nbsp;&nbsp;&nbsp;&nbsp;keys&nbsp;(list[int]):&nbsp;list&nbsp;of&nbsp;ascii&nbsp;codes&nbsp;representing&nbsp;keys&nbsp;for&nbsp;control<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="Pad-__init__"><strong>__init__</strong></a>(self, screen: pygame.surface.Surface, x_position: int, keys: list[int])</dt><dd><span class="code">Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</span></dd></dl>
+
+<dl><dt><a name="Pad-calculate_average_speed"><strong>calculate_average_speed</strong></a>(self, dy: int)</dt><dd><span class="code">Calculates&nbsp;average&nbsp;speed&nbsp;of&nbsp;the&nbsp;pad&nbsp;using<br>
+speed&nbsp;history&nbsp;from&nbsp;the&nbsp;last&nbsp;20&nbsp;frames<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;dy&nbsp;(int):&nbsp;value&nbsp;of&nbsp;instantaneous&nbsp;speed</span></dd></dl>
+
+<dl><dt><a name="Pad-set_beginning_position"><strong>set_beginning_position</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Pad-show"><strong>show</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Pad-update_position"><strong>update_position</strong></a>(self, dy: int)</dt><dd><span class="code">Updates&nbsp;Rect&nbsp;of&nbsp;the&nbsp;pad&nbsp;so&nbsp;it&nbsp;maches&nbsp;keyboard&nbsp;events.<br>
+Moving_up&nbsp;and&nbsp;moving_down&nbsp;flags&nbsp;are&nbsp;used&nbsp;to&nbsp;keep&nbsp;track<br>
+of&nbsp;constant&nbsp;movement&nbsp;and&nbsp;pause&nbsp;when&nbsp;hitting&nbsp;the&nbsp;wall<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;dy&nbsp;(int):&nbsp;1&nbsp;for&nbsp;moving_up<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-1&nbsp;for&nbsp;moving_down<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+</td></tr></table> <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Scoreboard">class <strong>Scoreboard</strong></a>(<a href="builtins.html#object">builtins.object</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#Scoreboard">Scoreboard</a>(screen)<br>
+&nbsp;<br>
+Object&nbsp;that&nbsp;keeps&nbsp;track&nbsp;of&nbsp;number&nbsp;of&nbsp;each&nbsp;player&nbsp;points<br>
+Creates&nbsp;and&nbsp;renders&nbsp;texts/scoreboard&nbsp;on&nbsp;the&nbsp;screen.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;screen&nbsp;(pygame.surface.Surface):&nbsp;display&nbsp;area<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn">Methods defined here:<br>
+<dl><dt><a name="Scoreboard-__init__"><strong>__init__</strong></a>(self, screen)</dt><dd><span class="code">Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</span></dd></dl>
+
+<dl><dt><a name="Scoreboard-render_texts"><strong>render_texts</strong></a>(self)</dt><dd><span class="code">Renders&nbsp;texts,&nbsp;places&nbsp;them&nbsp;in&nbsp;the&nbsp;right&nbsp;places<br>
+and&nbsp;displays&nbsp;them&nbsp;on&nbsp;the&nbsp;screen<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;None</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</span></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+    
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-sqrt"><strong>sqrt</strong></a>(x, /)</dt><dd><span class="code">Return&nbsp;the&nbsp;square&nbsp;root&nbsp;of&nbsp;x.</span></dd></dl>
+</td></tr></table><p>
+<table class="section">
+<tr class="decor data-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Data</strong></td></tr>
+    
+<tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><strong>BACKGROUND_COLOR</strong> = (0, 0, 0)<br>
+<strong>BALL_RADIUS</strong> = 10<br>
+<strong>BALL_SPEED</strong> = 12<br>
+<strong>FONT</strong> = &lt;pygame.font.Font object&gt;<br>
+<strong>OBJECTS_COLOR</strong> = (255, 255, 255)<br>
+<strong>PAD_1_KEYS</strong> = [119, 115]<br>
+<strong>PAD_2_KEYS</strong> = [1073741906, 1073741905]<br>
+<strong>PAD_SIZE</strong> = (20, 200)<br>
+<strong>PAD_SPEED</strong> = 4<br>
+<strong>SCREEN_SIZE</strong> = (1200, 700)<br>
+<strong>STARTING_TICK</strong> = 2000<br>
+<strong>TEXT_COLOR</strong> = (125, 125, 125)</td></tr></table>
+</body></html>

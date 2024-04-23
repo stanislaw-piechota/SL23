@@ -1,0 +1,10 @@
+[FORMAT]
+max-line-length=120
+
+[MESSAGES CONTROL]
+disable=wildcard-import,
+        unused-wildcard-import,
+        no-member,
+        missing-function-docstring,
+        attribute-defined-outside-init,
+        invalid-name
